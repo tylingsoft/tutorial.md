@@ -15,3 +15,9 @@ $(function(){
   console.log('hello world');
 });
 ```
+
+
+To include a literal backtick character within a code span, you can use multiple backticks as the opening and closing delimiters:
+
+``There is a literal backtick (`) here.``
+

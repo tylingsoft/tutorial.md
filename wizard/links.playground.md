@@ -22,3 +22,9 @@ Just use an empty set of square brackets — e.g., to link the word “Google”
 And then define the link:
 
 [Google]: http://google.com/
+
+
+Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the URL or email address with angle brackets.  
+What this means is that if you want to show the actual text of a URL or email address, and also have it be a clickable link, you can do this:
+
+<http://example.com/>
