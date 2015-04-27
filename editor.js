@@ -163,7 +163,7 @@ $(document).ready(function() {
   editor.session.setMode('ace/mode/markdown');
   editor.session.setUseWrapMode(true);
   editor.setScrollSpeed(1);
-  // editor.setOption("scrollPastEnd", true);
+  editor.setOption("scrollPastEnd", true);
   editor.session.setFoldStyle('manual');
   editor.focus();
   editor.session.on('changeScrollTop', function(scroll) {
