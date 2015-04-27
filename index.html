@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Markdown tutorial</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/github-markdown-css/github-markdown.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class='container'>
+      <section id="wizard">
+        <div class="page-header">
+          <h1>Markdown tutorial</h1>
+        </div>
+        <div id="rootwizard">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <ul>
+                  <li><a href="#welcome" data-toggle="tab">Welcome</a></li>
+                  <li><a href="#paragraphs" data-toggle="tab">Paragraphs</a></li>
+                  <li><a href="#headings" data-toggle="tab">Headings</a></li>
+                  <li><a href="#blockquotes" data-toggle="tab">Blockquotes</a></li>
+                  <li><a href="#text-style" data-toggle="tab">Text style</a></li>
+                  <li><a href="#horizontal-rules" data-toggle="tab">Horizontal rules</a></li>
+                  <li><a href="#links" data-toggle="tab">Links</a></li>
+                  <li><a href="#images" data-toggle="tab">Images</a></li>
+                  <li><a href="#lists" data-toggle="tab">Lists</a></li>
+                  <li><a href="#code" data-toggle="tab">Code</a></li>
+                  <li><a href="#tables" data-toggle="tab">Tables</a></li>
+                  <li><a href="#extensions" data-toggle="tab">Extensions</a></li>
+                </ul>
+             </div>
+            </div>
+          </div>
+          <div id="bar" class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+          </div>
+          <ul class="pager wizard">
+            <li class="previous first" style="display:none;"><a href="#">First</a></li>
+            <li class="previous"><a href="#">Previous</a></li>
+            <li class="next last" style="display:none;"><a href="#">Last</a></li>
+            <li class="next"><a href="#">Next</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane markdown-body" id="welcome"></div>
+            <div class="tab-pane markdown-body" id="paragraphs"></div>
+            <div class="tab-pane markdown-body" id="headings"></div>
+            <div class="tab-pane markdown-body" id="blockquotes"></div>
+            <div class="tab-pane markdown-body" id="text-style"></div>
+            <div class="tab-pane markdown-body" id="horizontal-rules"></div>
+            <div class="tab-pane markdown-body" id="links"></div>
+            <div class="tab-pane markdown-body" id="images"></div>
+            <div class="tab-pane markdown-body" id="lists"></div>
+            <div class="tab-pane markdown-body" id="code"></div>
+            <div class="tab-pane markdown-body" id="tables"></div>
+            <div class="tab-pane markdown-body" id="extensions"></div>
+          </div>
+        </div>
+        <br/>
+        <iframe src="editor.html" width="100%" height="400px" id="iframe"></iframe>
+      </section>
+  </div>
+  <script src="bower_components/jquery-dist/jquery.min.js"></script>
+  <script src="bower_components/markedown/markedown.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="jquery.bootstrap.wizard.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    var renderer = new marked.Renderer();
+    marked.setOptions({
+      renderer: renderer,
+      gfm: true,
+      tables: true,
+      breaks: false,
+      pedantic: false,
+      sanitize: false,
+      smartLists: true,
+      smartypants: true
+    });
+    $('#iframe').load(function(){
+      $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
+        var $total = navigation.find('li').length;
+        var $current = index + 1;
+        var $percent = ($current / $total) * 100;
+        $('#rootwizard .progress-bar').css({ width: $percent + '%' });
+
+        var content = tab[0].innerText.trim().toLowerCase().replace(/\s+/, '-');
+        $.get('wizard/' + content + '.md', { "_": $.now() }, function(data){
+          $(tab.find('a').attr('href')).html(marked(data));
+        }).fail(function(){
+          $(tab.find('a').attr('href')).html('');
+        });
+        $.get('wizard/' + content + '.playground.md', { "_": $.now() }, function(data){
+          document.getElementById('iframe').contentWindow.editor.session.setValue(data, -1);
+        }).fail(function(){
+          document.getElementById('iframe').contentWindow.editor.session.setValue('', -1);
+        });
+      }});
+    });
+  });
+  </script>
+  </body>
+</html>
