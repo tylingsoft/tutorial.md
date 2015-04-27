@@ -11,7 +11,3 @@ Reference-style:
 
 [id]: /path/to/img.jpg "Title"
 ```
-
-Both of the above examples produce the same output:
-
-`<img src="/path/to/img.jpg" alt="alt text" title="Title"/>`
