@@ -4,4 +4,4 @@ There are already dozens of Markdown implementations in many languages. Some of 
 
 GitHub extends markdown to support task lists and emojis.
 
-Some markdown implementation supports flowchats, sequence diagrams and LaTex math.
+Some markdown implementation supports LaTex math, flowchats, sequence diagrams and gantt diagrams.

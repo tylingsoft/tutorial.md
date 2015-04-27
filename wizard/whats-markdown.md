@@ -1,8 +1,4 @@
-# Welcome
-
-Welcome to the Markdown tutorial!
-
-## What is Markdown
+# What's Markdown
 
 Quoted from [CommonMark](http://commonmark.org/):
 

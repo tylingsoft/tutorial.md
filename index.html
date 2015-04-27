@@ -16,7 +16,7 @@
             <div class="navbar-inner">
               <div class="container">
                 <ul>
-                  <li><a href="#welcome" data-toggle="tab">Welcome</a></li>
+                  <li><a href="#whats-markdown" data-toggle="tab">What's Markdown</a></li>
                   <li><a href="#paragraphs" data-toggle="tab">Paragraphs</a></li>
                   <li><a href="#headings" data-toggle="tab">Headings</a></li>
                   <li><a href="#blockquotes" data-toggle="tab">Blockquotes</a></li>
@@ -42,7 +42,7 @@
             <li class="next"><a href="#">Next</a></li>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane markdown-body" id="welcome"></div>
+            <div class="tab-pane markdown-body" id="whats-markdown"></div>
             <div class="tab-pane markdown-body" id="paragraphs"></div>
             <div class="tab-pane markdown-body" id="headings"></div>
             <div class="tab-pane markdown-body" id="blockquotes"></div>
@@ -84,7 +84,7 @@
         var $percent = ($current / $total) * 100;
         $('#rootwizard .progress-bar').css({ width: $percent + '%' });
 
-        var content = tab[0].innerText.trim().toLowerCase().replace(/\s+/, '-');
+        var content = tab[0].innerText.trim().toLowerCase().replace(/\s+/, '-').replace("'", '');
         $.get('wizard/' + content + '.md', { "_": $.now() }, function(data){
           $(tab.find('a').attr('href')).html(marked(data));
         }).fail(function(){
