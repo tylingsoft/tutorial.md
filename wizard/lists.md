@@ -6,3 +6,4 @@ Ordered (numbered) lists use regular numbers, followed by periods, as list marke
 
 List items may consist of multiple paragraphs. Each subsequent paragraph in a list item must be indented by either 4 spaces or one tab.
 
+And if you have sub lists, put two extra spaces before the sub list items.

@@ -5,6 +5,13 @@ Task lists:
 - [ ] Learn Markdown extensions
 
 
+Emojis:
+
+GitHub emojis always have the same dimension. that's why I prefer to use `img` instead:
+
+<img src="https://s.tylingsoft.com/emoji-icons/dog.png" width="64"/>
+
+
 Flowchars:
 
 ```

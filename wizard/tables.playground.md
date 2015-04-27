@@ -1,8 +1,12 @@
+### Simple example
+
 First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
 
+
+### Extra pipes
 
 | First Header  | Second Header |
 | ------------- | ------------- |
@@ -10,17 +14,15 @@ Content Cell  | Content Cell
 | Content Cell  | Content Cell  |
 
 
-| Name | Description          |
-| ------------- | ----------- |
-| Help      | Display the help window.|
-| Close     | Closes a window     |
-
+### Inline Markdown
 
 | Name | Description          |
 | ------------- | ----------- |
 | Help      | ~~Display the~~ help window.|
 | Close     | _Closes_ a window     |
 
+
+### Alignment
 
 | Left-Aligned  | Center Aligned  | Right Aligned |
 | :------------ |:---------------:| -----:|

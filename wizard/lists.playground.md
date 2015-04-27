@@ -1,14 +1,26 @@
-Unordered (bulleted) lists:
+### Unordered (bulleted) lists:
 
 * Candy.
 * Gum.
 * Booze.
 
-Ordered (numbered) lists:
+
+### Ordered (numbered) lists:
 
 1.  Red
 2.  Green
 3.  Blue
+
+
+### Sub list:
+
+- And if you have sub lists, put two extra spaces before the sub list items.
+  - Like this
+  - And this
+
+
+---
+
 
 It’s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces.
 
