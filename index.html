@@ -56,7 +56,7 @@
             <div class="tab-pane markdown-body" id="extensions"></div>
           </div>
         </div>
-        <br/>
+        <hr/>
         <iframe src="editor.html" width="100%" height="400px" id="iframe"></iframe>
       </section>
   </div>
@@ -92,8 +92,10 @@
         });
         $.get('wizard/' + content + '.playground.md', { "_": $.now() }, function(data){
           document.getElementById('iframe').contentWindow.editor.session.setValue(data, -1);
+          document.getElementById('iframe').contentWindow.editor.session.setScrollTop(0);
         }).fail(function(){
           document.getElementById('iframe').contentWindow.editor.session.setValue('', -1);
+          document.getElementById('iframe').contentWindow.editor.session.setScrollTop(0);
         });
       }});
     });
