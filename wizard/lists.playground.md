@@ -49,10 +49,26 @@ To put a code block within a list item, the code block needs to be indented twic
 
         <code goes here>
 
+
+---
+
+
 It’s worth noting that it’s possible to trigger an ordered list by accident, by writing something like this:
+
+```markdown
+1986. What a great season.
+```
+
+Result:
 
 1986. What a great season.
 
-In other words, a number-period-space sequence at the beginning of a line. To avoid this, you can backslash-escape the period:
+In other words, a number-period-space sequence at the beginning of a line will always result in an ordered list. To avoid this, you can backslash-escape the period:
+
+```markdown
+1986\. What a great season.
+```
+
+Result:
 
 1986\. What a great season.
