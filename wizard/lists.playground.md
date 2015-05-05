@@ -17,12 +17,14 @@
 - And if you have sub lists, put two extra spaces before the sub list items.
   - Like this
   - And this
+- You can also mix...
+  1. Ordered lists
+  1. And unordered lists
+
+It’s important to note that the actual numbers you use to mark an ordered list have no effect on the HTML output Markdown produces.
 
 
 ---
-
-
-It’s important to note that the actual numbers you use to mark the list have no effect on the HTML output Markdown produces.
 
 
 If you put blank lines between items, you’ll get `<p>` tags for the list item text. You can create multi-paragraph list items by indenting the paragraphs by 4 spaces or 1 tab:
