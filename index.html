@@ -94,6 +94,8 @@
         }).fail(function(){
           $(tab.find('a').attr('href')).html('');
         });
+        document.getElementById('iframe').contentWindow.editor.session.setValue('', -1);
+        document.getElementById('iframe').contentWindow.editor.session.setScrollTop(0);
         $.get('wizard/' + content + '.playground.md', { "_": $.now() }, function(data){
           document.getElementById('iframe').contentWindow.editor.session.setValue(data, -1);
           document.getElementById('iframe').contentWindow.editor.session.setScrollTop(0);
